@@ -33,7 +33,7 @@ const Model = ({
             {title} <span>{head}</span>
           </h1>
           <p>{info}</p>
-          <small>{smallInfo}</small>
+          {/* <small>{smallInfo}</small> */}
 
           {loading == true ? (
             <Loader />
