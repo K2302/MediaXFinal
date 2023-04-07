@@ -82,12 +82,12 @@ const Model = ({
                   Submit
                 </button>
 
-                <button onClick={() => openBox(false)}>
+                {/* <button onClick={() => openBox(false)}>
                   {""}
                   <Image src={images.close} alt="send" width={30} height={30} />
                   {""}
                   Cancle
-                </button>
+                </button> */}
               </div>
             </div>
           )}
