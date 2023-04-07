@@ -28,16 +28,17 @@ const NavBar = () => {
     // },
     {
       menu: "FAQS",
-      link: "/",
+      link: "faq",
     },
     {
       menu: "TERMS OF USE",
-      link: "/",
+      link: "tos",
     },
     {
       menu:"FORUM",
       link:"forum",
     }
+   
   ];
 
   //USESTATE
