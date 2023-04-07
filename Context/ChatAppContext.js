@@ -23,7 +23,7 @@ export const ChatAppProvider = ({ children }) => {
   //CHAT USER DATA
   const [currentUserName, setCurrentUserName] = useState("");
   const [currentUserAddress, setCurrentUserAddress] = useState("");
-
+  const [forum,setForum] = useState("CryptoVerse")
   const router = useRouter();
 
   //FETCH DATA TIME OF PAGE LOAD
