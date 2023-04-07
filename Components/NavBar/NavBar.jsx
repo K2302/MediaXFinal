@@ -4,7 +4,7 @@ import Link from "next/link";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { ChatAppContect } from "../../Context/ChatAppContext";
+import { ChatAppContext } from "../../Context/ChatAppContext";
 import { Model, Error } from "../index";
 import images from "../../assets";
 
@@ -35,9 +35,9 @@ const NavBar = () => {
       link: "/",
     },
     {
-      menu:"FORUM",
-      link:"forum",
-    }
+      menu: "FORUM",
+      link: "forum",
+    },
   ];
 
   //USESTATE
@@ -45,8 +45,18 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [openModel, setOpenModel] = useState(false);
 
-  const { account, userName, connectWallet, createAccount, error } =
-    useContext(ChatAppContect);
+  const { account, userName, connectWallet, createAccount, error, setError } =
+    useContext(ChatAppContext);
+
+  useEffect(() => {
+    if (account == "") openModel = true;
+    else openModel = false;
+
+    setTimeout(() => {
+      setError(null);
+    }, 1000);
+  }, [error, openModel, account]);
+
   return (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
@@ -135,20 +145,20 @@ const NavBar = () => {
       </div>
 
       {/* MODEL COMPONENT */}
-      {openModel && (
+      {openModel ? (
         <div className={Style.modelBox}>
           <Model
             openBox={setOpenModel}
             title="WELCOME TO"
-            head="CHAT BUDDY"
-            info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
-            smallInfo="Kindley seclet your name..."
+            head="PYXELVERSE"
+            // info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
+            // smallInfo="Please enter your name..."
             image={images.hero}
             functionName={createAccount}
             address={account}
           />
         </div>
-      )}
+      ) : null}
       {error == "" ? "" : <Error error={error} />}
     </div>
   );

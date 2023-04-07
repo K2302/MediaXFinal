@@ -8,7 +8,7 @@ import {
   connectingWithContract,
 } from "../Utils/apiFeature";
 
-export const ChatAppContect = React.createContext();
+export const ChatAppContext = React.createContext();
 
 export const ChatAppProvider = ({ children }) => {
   //USESTATE
@@ -66,9 +66,7 @@ export const ChatAppProvider = ({ children }) => {
   //CREATE ACCOUNT
   const createAccount = async ({ name, accountAddress }) => {
     try {
-      // if (!name || !accountAddress)
-      //   return setError("Name And AccountAddress, cannot be emty");
-
+      if (!name) return setError("Name , cannot be emty");
       const contract = await connectingWithContract();
       const getCreatedUser = await contract.createAccount(name);
       setLoading(true);
@@ -76,7 +74,7 @@ export const ChatAppProvider = ({ children }) => {
       setLoading(false);
       window.location.reload();
     } catch (error) {
-      setError("Error while creating your account Pleas reload browser");
+      setError("Error while creating your account Please reload browser");
     }
   };
 
@@ -121,7 +119,7 @@ export const ChatAppProvider = ({ children }) => {
     setCurrentUserAddress(userAddress);
   };
   return (
-    <ChatAppContect.Provider
+    <ChatAppContext.Provider
       value={{
         readMessage,
         createAccount,
@@ -135,13 +133,15 @@ export const ChatAppProvider = ({ children }) => {
         friendLists,
         friendMsg,
         userLists,
+        setLoading,
         loading,
         error,
+        setError,
         currentUserName,
         currentUserAddress,
       }}
     >
       {children}
-    </ChatAppContect.Provider>
+    </ChatAppContext.Provider>
   );
 };
