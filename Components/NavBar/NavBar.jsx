@@ -28,11 +28,11 @@ const NavBar = () => {
     // },
     {
       menu: "FAQS",
-      link: "/",
+      link: "faq",
     },
     {
       menu: "TERMS OF USE",
-      link: "/",
+      link: "tos",
     },
     {
       menu: "FORUM",
@@ -61,7 +61,7 @@ const NavBar = () => {
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
         <div className={Style.NavBar_box_left}>
-          <Image src={images.logo} alt="logo" width={50} height={50} />
+          <Image src={images.logo} alt="logo" width={100} height={100} />
         </div>
         <div className={Style.NavBar_box_right}>
           {/* //DESKTOP */}
