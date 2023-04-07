@@ -29,6 +29,7 @@ export const ChatAppProvider = ({ children }) => {
   //FETCH DATA TIME OF PAGE LOAD
   const fetchData = async () => {
     try {
+      setLoading(true);
       //GET CONTRACT
       const contract = await connectingWithContract();
       //GET ACCOUNT
@@ -46,6 +47,8 @@ export const ChatAppProvider = ({ children }) => {
     } catch (error) {
       // setError("Please Install And Connect Your Wallet");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
   useEffect(() => {

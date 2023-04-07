@@ -43,19 +43,19 @@ const NavBar = () => {
   //USESTATE
   const [active, setActive] = useState(2);
   const [open, setOpen] = useState(false);
-  const [openModel, setOpenModel] = useState(false);
+  const [openModel, setOpenModel] = useState(true);
 
   const { account, userName, connectWallet, createAccount, error, setError } =
     useContext(ChatAppContext);
 
   useEffect(() => {
-    if (account == "") openModel = true;
-    else openModel = false;
+    if (userName) setOpenModel(false);
+    else setOpenModel(true);
 
     setTimeout(() => {
       setError(null);
     }, 1000);
-  }, [error, openModel, account]);
+  }, [error, account, openModel, userName]);
 
   return (
     <div className={Style.NavBar}>
@@ -145,7 +145,7 @@ const NavBar = () => {
       </div>
 
       {/* MODEL COMPONENT */}
-      {openModel ? (
+      {openModel == true ? (
         <div className={Style.modelBox}>
           <Model
             openBox={setOpenModel}
