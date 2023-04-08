@@ -2,6 +2,8 @@
     padding: 2rem;
     background: linear-gradient(135deg, #3c3c3c, #545454);
     border-radius: 1rem;
+    background: linear-gradient(135deg, #3c3c3c, #545454);
+    border-radius: 1rem;
     overflow-y: scroll;
     background: rgba( 236, 209, 209, 0.6 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -9,13 +11,14 @@ backdrop-filter: blur( 1.5px );
 -webkit-backdrop-filter: blur( 1.5px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
-    }
-    
-    .Chat_box{
+        }
+        
+        .Chat_box{
     display: grid;
     grid-template-columns: 1fr;
     height: 50vh;
     width: 80%;
+    margin: 0 auto;
     margin: 0 auto;
     overflow-y: scroll;
     border: 2px solid whitesmoke;
@@ -31,31 +34,36 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
     position: relative;
     color: #333;
+        color: #333;
     }
-    
-    .Chat_box_left_title{
+        
+        .Chat_box_left_title{
     display: flex;
     align-items: center;
     gap: 1rem;
     font-size: 1rem;
-    }
+        }
     .Chat_box_send{
         margin-top: 1.5rem;
         width: 45rem;
         position: relative;
         left: 1rem;
     }
-    
-    .Chat_box_send_img{
+        
+        .Chat_box_send_img{
     display: flex;
     align-items: center;
     gap: 1rem;
-    }
-    
-    .Chat_box_send_img input{
+        }
+        
+        .Chat_box_send_img input{
     width: 100%;
+    background-color: #fff;
     background-color: #fff;
     outline: none;
     border: none;
@@ -66,22 +74,30 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     }
     
     .Chat_user_info{
+    color: #333;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .Chat_user_info{
     display: flex;
     align-items: center;
     gap: 2rem;
     line-height: 1;
-    }
-    
-    .Chat_user_info_box h4,
-    .Chat_user_info_box p{
+        }
+        
+        .Chat_user_info_box h4,
+        .Chat_user_info_box p{
     line-height: 0;
-    }
-    
-    @media only screen and (max-width: 35em) {
+        }
+        
+        @media only screen and (max-width: 35em) {
     .Chat{
     padding: 1rem;
     }
-    
+        
+    css
+    Copy code
     css
     Copy code
     .Chat p{

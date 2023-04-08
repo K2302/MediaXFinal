@@ -29,15 +29,17 @@ const NavBar = () => {
     {
       menu: "FAQS",
       link: "faq",
+      link: "faq",
     },
     {
       menu: "TERMS OF USE",
       link: "tos",
+      link: "tos",
     },
     {
-      menu: "FORUM",
-      link: "forum",
-    },
+      menu:  "FORUM",
+      link:  "forum",
+    },,
   ];
 
   //USESTATE
@@ -49,8 +51,20 @@ const NavBar = () => {
     useContext(ChatAppContext);
 
   useEffect(() => {
+    if (userName) setOpenModel(true);
+
+  const { account, userName, connectWallet, createAccount, error, setError } =
+    useContext(ChatAppContext);
+
+  useEffect(() => {
     if (userName) setOpenModel(false);
     else setOpenModel(true);
+    else setOpenModel(true);
+
+    setTimeout(() => {
+      setError(null);
+    }, 1000);
+  }, [error, account, openModel, userName]);
 
     setTimeout(() => {
       setError(null);

@@ -9,6 +9,7 @@ import {
 } from "../Utils/apiFeature";
 
 export const ChatAppContext = React.createContext();
+export const ChatAppContext = React.createContext();
 
 export const ChatAppProvider = ({ children }) => {
   //USESTATE
@@ -29,6 +30,7 @@ export const ChatAppProvider = ({ children }) => {
   const fetchData = async () => {
     try {
       setLoading(true);
+      setLoading(true);
       //GET CONTRACT
       const contract = await connectingWithContract();
       //GET ACCOUNT
@@ -46,6 +48,8 @@ export const ChatAppProvider = ({ children }) => {
     } catch (error) {
       // setError("Please Install And Connect Your Wallet");
       console.log(error);
+    } finally {
+      setLoading(false);
     } finally {
       setLoading(false);
     }
@@ -69,6 +73,7 @@ export const ChatAppProvider = ({ children }) => {
   const createAccount = async ({ name, accountAddress }) => {
     try {
       if (!name) return setError("Name , cannot be emty");
+      if (!name) return setError("Name , cannot be emty");
       const contract = await connectingWithContract();
       const getCreatedUser = await contract.createAccount(name);
       setLoading(true);
@@ -76,7 +81,7 @@ export const ChatAppProvider = ({ children }) => {
       setLoading(false);
       window.location.reload();
     } catch (error) {
-      setError("Error while creating your account Please reload browser");
+      setError("Error while creating your account Pleasee reload browser");
     }
   };
 
@@ -122,6 +127,7 @@ export const ChatAppProvider = ({ children }) => {
   };
   return (
     <ChatAppContext.Provider
+    <ChatAppContext.Provider
       value={{
         readMessage,
         createAccount,
@@ -140,11 +146,13 @@ export const ChatAppProvider = ({ children }) => {
         error,
         setError,
         router,
+        setError,
         currentUserName,
         currentUserAddress,
       }}
     >
       {children}
+    </ChatAppContext.Provider>
     </ChatAppContext.Provider>
   );
 };
