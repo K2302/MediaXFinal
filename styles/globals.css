@@ -32,7 +32,8 @@ a {
 
   body {
     color: white;
-    background: black;
+    /* background: black; */
+    background: linear-gradient(to right, #8c04dc, #00c8c8);
   }
 }
 
@@ -70,7 +71,7 @@ a {
 }
 
 .tweetBox__tweetButton {
-  background-color: var(--twitter-color) !important;
+   background-color:var(--twitter-color) !important;
   border: none !important;
   color: white !important;
   font-weight: 900 !important;
@@ -162,7 +163,7 @@ a {
 }
 
 .sidebarOption:hover {
-  background-color: #e89d11;
+  background-color: #11abe8;
   border-radius: 30px;
   color: var(--twitter-color);
   transition: color 100ms ease-out;
