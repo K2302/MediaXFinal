@@ -12,7 +12,7 @@
 
 .Model_box_right h1 {
   font-size: 3rem;
-  color: #f18303;
+  color: #fff;
   line-height: 0.9;
 }
 
@@ -23,7 +23,7 @@
 
 .Model_box_right small {
   font-size: 1.2rem;
-  color: #f18303;
+  color: #fff;
 }
 
 .Model_box_right_name_info {
@@ -42,7 +42,7 @@
   background-color: transparent;
   outline: none;
   border: none;
-  color: #f18303;
+  color: #fff;
 }
 
 .Model_box_right_name_btn {
@@ -54,7 +54,7 @@
 .Model_box_right_name_btn button {
   outline: none;
   border: none;
-  color: #f18303;
+  color: #fff;
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -71,7 +71,7 @@
 .Model_box_right_name_btn button {
   outline: none;
   border: none;
-  color: #f18303;
+  color: white;
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -88,7 +88,7 @@
 
 .Model_box_right_name_btn button:hover {
   background-color: rgba(0, 0, 0, 0.34);
-  color: #df7802;
+  color: #0fc3df;
 }
 
 @media only screen and (max-width: 35em) {
@@ -136,3 +136,4 @@
     z-index: 11111;
   }
 }
+

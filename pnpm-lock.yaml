@@ -1,5 +1,32 @@
 lockfileVersion: '6.0'
 
+specifiers:
+  '@material-ui/core': ^4.12.4
+  '@material-ui/icons': ^4.11.3
+  '@nomicfoundation/hardhat-chai-matchers': ^1.0.0
+  '@nomicfoundation/hardhat-network-helpers': ^1.0.0
+  '@nomicfoundation/hardhat-toolbox': ^2.0.0
+  '@nomiclabs/hardhat-ethers': ^2.0.0
+  '@nomiclabs/hardhat-etherscan': ^3.0.0
+  '@typechain/ethers-v5': ^10.1.0
+  '@typechain/hardhat': ^6.1.2
+  '@types/chai': ^4.2.0
+  '@types/mocha': ^9.1.0
+  avataaars: ^2.0.0
+  dotenv: ^16.0.3
+  ethers: ^5.7.2
+  hardhat: ^2.13.0
+  hardhat-gas-reporter: ^1.0.8
+  next: 12.3.1
+  react: 18.2.0
+  react-dom: 18.2.0
+  react-flip-move: ^3.0.5
+  react-twitter-embed: ^4.0.4
+  solidity-coverage: ^0.8.1
+  typechain: ^8.1.0
+  typescript: ^5.0.3
+  web3modal: ^1.9.9
+
 dependencies:
   '@material-ui/core':
     specifier: ^4.12.4
@@ -22,6 +49,7 @@ dependencies:
   pnpm:
     specifier: ^8.1.1
     version: 8.1.1
+  pnpm: 8.1.1
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -4376,13 +4404,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /pnpm@8.1.1:
-    resolution: {integrity: sha512-XLzcc4O8YrqfQ1+qjPtHGDFcdUeno2Zk+kuuSc9CagIiY8y4uhnqQ2B7jW8tgwQDNmehewGZuqrAoskgCkbTnw==}
-    engines: {node: '>=16.14'}
-    hasBin: true
-    dev: false
-
-  /popper.js@1.16.1-lts:
+  /popper.js/1.16.1-lts:
     resolution: {integrity: sha512-Kjw8nKRl1m+VrSFCoVGPph93W/qrSO7ZkqPpTf7F4bk/sqcfWK019dWBUpE/fBOsOQY1dks/Bmcbfn1heM/IsA==}
     dev: false
 
