@@ -7,6 +7,9 @@ import images from "../../assets";
 import { ChatAppContext } from "../../Context/ChatAppContext";
 import { Loader } from "../../Components/index";
 import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
+import PersonIcon from '@material-ui/icons/Person';
+import TelegramIcon from '@material-ui/icons/Telegram';
+import CancelIcon from '@material-ui/icons/HighlightOff';
 
 const Model = ({
   openBox,
@@ -51,12 +54,7 @@ const Model = ({
           ) : (
             <div className={Style.Model_box_right_name}>
               <div className={Style.Model_box_right_name_info}>
-                <Image
-                  src={images.username}
-                  alt="user"
-                  width={30}
-                  height={30}
-                />
+                <PersonIcon />
                 <input
                   type="text"
                   required={true}
@@ -65,7 +63,7 @@ const Model = ({
                 />
               </div>
               <div className={Style.Model_box_right_name_info}>
-                <AccountBalanceWalletIcon style={{ color: "#f18303" }} />
+                <AccountBalanceWalletIcon style={{ color: "#fff" }} />
                 <input
                   type="text"
                   placeholder={address || "Address.."}
@@ -77,16 +75,16 @@ const Model = ({
               <div className={Style.Model_box_right_name_btn}>
                 <button onClick={() => handleSubmit({ name, accountAddress })}>
                   {""}
-                  <Image src={images.send} alt="send" width={30} height={30} />
+                  <TelegramIcon />
                   {""}
                   Submit
                 </button>
 
                 <button onClick={() => router.push("/")}>
                   {""}
-                  <Image src={images.close} alt="send" width={30} height={30} />
+                  <CancelIcon/>
                   {""}
-                  Cancle
+                  Cancel
                 </button>
               </div>
             </div>
