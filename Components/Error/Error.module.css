@@ -1,0 +1,14 @@
+.Error {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 250%);
+  z-index: 1111111111;
+  margin: auto auto;
+  background-color: #292f3f;
+  transition: 300ms all;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  background: #f18303;
+  box-shadow: 5px 5px 100px #ff970399;
+}
