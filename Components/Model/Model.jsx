@@ -21,7 +21,7 @@ const Model = ({
   //USESTATE
   const [name, setName] = useState("");
   const [accountAddress, setAccountAddress] = useState(address);
-  const { loading, setLoading } = useContext(ChatAppContext);
+  const { loading, setLoading, router } = useContext(ChatAppContext);
 
   useEffect(() => {
     console.log(loading);
@@ -82,12 +82,12 @@ const Model = ({
                   Submit
                 </button>
 
-                {/* <button onClick={() => openBox(false)}>
+                <button onClick={() => router.push("/")}>
                   {""}
                   <Image src={images.close} alt="send" width={30} height={30} />
                   {""}
                   Cancle
-                </button> */}
+                </button>
               </div>
             </div>
           )}
