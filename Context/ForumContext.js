@@ -29,7 +29,6 @@ export const ChatAppProvider = ({ children }) => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      setLoading(true);
       //GET CONTRACT
       const contract = await connectingWithContract();
       //GET ACCOUNT
@@ -70,7 +69,6 @@ export const ChatAppProvider = ({ children }) => {
   const createAccount = async ({ name, accountAddress }) => {
     try {
       if (!name) return setError("Name , cannot be emty");
-      if (!name) return setError("Name , cannot be emty");
       const contract = await connectingWithContract();
       const getCreatedUser = await contract.createAccount(name);
       setLoading(true);
@@ -78,7 +76,7 @@ export const ChatAppProvider = ({ children }) => {
       setLoading(false);
       window.location.reload();
     } catch (error) {
-      setError("Error while creating your account Pleasee reload browser");
+      setError("Error while creating your account Please reload browser");
     }
   };
 
@@ -140,8 +138,6 @@ export const ChatAppProvider = ({ children }) => {
         setLoading,
         loading,
         error,
-        setError,
-        router,
         setError,
         currentUserName,
         currentUserAddress,

@@ -44,7 +44,7 @@ const Model = ({
             {title} <span style={{ paddingTop: "10px" }}>{head}</span>
           </h1>
           <p>{info}</p>
-          <small>{smallInfo}</small>
+          {/* <small>{smallInfo}</small> */}
 
           {loading == true ? (
             <Loader />
