@@ -4,8 +4,8 @@ import Link from "next/link";
 
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
-import { ChatAppContect } from "../../Context/ChatAppContext";
-import { Model, Error } from "../index";
+import { ChatAppContext } from "../../Context/ChatAppContext";
+import { Error } from "../index";
 import images from "../../assets";
 
 const NavBar = () => {
@@ -28,30 +28,48 @@ const NavBar = () => {
     // },
     {
       menu: "FAQS",
-      link: "/",
+      link: "faq",
     },
     {
       menu: "TERMS OF USE",
-      link: "/",
+      link: "tos",
     },
     {
-      menu:"FORUM",
-      link:"forum",
-    }
+      menu: "FORUM",
+      link: "forum",
+    },
+    ,
   ];
 
   //USESTATE
   const [active, setActive] = useState(2);
   const [open, setOpen] = useState(false);
-  const [openModel, setOpenModel] = useState(false);
+  const [openModel, setOpenModel] = useState(true);
 
-  const { account, userName, connectWallet, createAccount, error } =
-    useContext(ChatAppContect);
-  return (
+  const {
+    account,
+    userName,
+    connectWallet,
+    createAccount,
+    error,
+    setError,
+    router,
+  } = useContext(ChatAppContext);
+
+  useEffect(() => {
+    if (userName) setOpenModel(true);
+    else setOpenModel(true);
+
+    setTimeout(() => {
+      setError(null);
+    }, 1000);
+  }, [error, account, openModel, userName]);
+
+  return router.pathname != "/auth" ? (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
         <div className={Style.NavBar_box_left}>
-          <Image src={images.logo} alt="logo" width={50} height={50} />
+          <Image src={images.logo} alt="logo" width={170} height={170} />
         </div>
         <div className={Style.NavBar_box_right}>
           {/* //DESKTOP */}
@@ -61,7 +79,7 @@ const NavBar = () => {
                 onClick={() => setActive(i + 1)}
                 key={i + 1}
                 className={`${Style.NavBar_box_right_menu_items} ${
-                  active == i + 1 ? Style.active_btn : ""
+                  active == i + 1 ? Style.active_btn : null
                 }`}
               >
                 <Link
@@ -106,18 +124,21 @@ const NavBar = () => {
           {/* CONNECT WALLET */}
           <div className={Style.NavBar_box_right_connect}>
             {account == "" ? (
-              <button onClick={() => connectWallet()}>
+              <button className="button-78" onClick={() => connectWallet()}>
                 {""}
                 <span>Connect Wallet</span>
               </button>
             ) : (
-              <button onClick={() => setOpenModel(true)}>
+              <button
+                className="button-78 "
+                onClick={() => router.push("auth")}
+              >
                 {""}
                 <Image
                   src={userName ? images.accountName : images.create2}
                   alt="Account image"
-                  width={20}
-                  height={20}
+                  width={25}
+                  height={25}
                 />
                 {""}
                 <small>{userName || "Create Account"}</small>
@@ -133,25 +154,9 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-
-      {/* MODEL COMPONENT */}
-      {openModel && (
-        <div className={Style.modelBox}>
-          <Model
-            openBox={setOpenModel}
-            title="WELCOME TO"
-            head="CHAT BUDDY"
-            info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
-            smallInfo="Kindley seclet your name..."
-            image={images.hero}
-            functionName={createAccount}
-            address={account}
-          />
-        </div>
-      )}
       {error == "" ? "" : <Error error={error} />}
     </div>
-  );
+  ) : null;
 };
 
 export default NavBar;
