@@ -107,7 +107,6 @@ const Chat = ({
                 placeholder="type your message"
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <Image src={images.file} alt="file" width={50} height={50} />
               {loading == true ? (
                 <Loader />
               ) : (

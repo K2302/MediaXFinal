@@ -3,6 +3,7 @@
     width: 80%;
     margin:  3rem auto;
     position: relative;
+    
 }
 
 .NavBar_box{
@@ -10,12 +11,14 @@
     grid-template-columns: 1fr 1.7fr;
     align-items: center;
     gap: 2rem;
+    
 }
 
 .NavBar_box_right{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .NavBar_box_right_menu{
@@ -29,13 +32,21 @@
 
 .active_btn{
     background-color: aqua;
-    color:  #2f38e0;
+    color:  #ffffff;
     height: 2.9rem;
     width:8rem;
     border-radius: 1.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba( 236, 209, 209, 0.6 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 1.5px );
+-webkit-backdrop-filter: blur( 1.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
     /* border-bottom: 2px solid #F18303;
     padding-bottom: .4rem; */
 }
