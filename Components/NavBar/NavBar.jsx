@@ -57,7 +57,22 @@ const NavBar = () => {
     }, 1000);
   }, [error, account, openModel, userName]);
 
-  return (
+  return openModel ? (
+    <div className={Style.modelBox}>
+      <Model
+        openBox={setOpenModel}
+        title="WELCOME TO"
+        head="PYXELVERSE"
+        // info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
+        // smallInfo="Please enter your name..."
+        image={images.hero}
+        functionName={createAccount}
+        address={account}
+      />
+
+      {error == "" ? "" : <Error error={error} />}
+    </div>
+  ) : (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
         <div className={Style.NavBar_box_left}>
@@ -144,21 +159,6 @@ const NavBar = () => {
         </div>
       </div>
 
-      {/* MODEL COMPONENT */}
-      {openModel == true ? (
-        <div className={Style.modelBox}>
-          <Model
-            openBox={setOpenModel}
-            title="WELCOME TO"
-            head="PYXELVERSE"
-            // info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
-            // smallInfo="Please enter your name..."
-            image={images.hero}
-            functionName={createAccount}
-            address={account}
-          />
-        </div>
-      ) : null}
       {error == "" ? "" : <Error error={error} />}
     </div>
   );

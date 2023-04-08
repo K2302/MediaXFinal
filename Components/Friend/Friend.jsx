@@ -24,7 +24,7 @@ const Friend = () => {
     readUser,
   } = useContext(ChatAppContext);
   console.log(friendLists);
-  return (
+  return userName ? (
     <div className={Style.Friend}>
       <div className={Style.Friend_box}>
         <div className={Style.Friend_box_left}>
@@ -53,7 +53,7 @@ const Friend = () => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default Friend;
