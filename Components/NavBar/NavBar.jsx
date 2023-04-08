@@ -29,11 +29,9 @@ const NavBar = () => {
     {
       menu: "FAQS",
       link: "faq",
-      link: "faq",
     },
     {
       menu: "TERMS OF USE",
-      link: "tos",
       link: "tos",
     },
     {
@@ -81,7 +79,7 @@ const NavBar = () => {
                 onClick={() => setActive(i + 1)}
                 key={i + 1}
                 className={`${Style.NavBar_box_right_menu_items} ${
-                  active == i + 1 ? Style.active_btn : ""
+                  active == i + 1 ? Style.active_btn : null
                 }`}
               >
                 <Link
@@ -139,8 +137,8 @@ const NavBar = () => {
                 <Image
                   src={userName ? images.accountName : images.create2}
                   alt="Account image"
-                  width={20}
-                  height={20}
+                  width={25}
+                  height={25}
                 />
                 {""}
                 <small>{userName || "Create Account"}</small>

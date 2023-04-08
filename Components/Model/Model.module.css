@@ -1,7 +1,7 @@
 .Model {
   width: 85%;
   height: 100vh;
-  margin: 1rem auto;
+  margin: auto;
 }
 .Model_box {
   height: 100vh;
@@ -47,7 +47,7 @@
 
 .Model_box_right_name_btn {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 

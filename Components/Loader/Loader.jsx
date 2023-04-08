@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 
 //INTERNAL IMPORT
@@ -12,7 +12,7 @@ const Loader = () => {
         <Image src={images.loader} alt="loader" width={100} height={100} />
       </div>
     </div>
-  );
+  )
 };
 
 export default Loader;
