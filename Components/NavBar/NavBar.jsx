@@ -5,7 +5,7 @@ import Link from "next/link";
 //INTERNAL IMPORT
 import Style from "./NavBar.module.css";
 import { ChatAppContext } from "../../Context/ChatAppContext";
-import { Model, Error } from "../index";
+import { Error } from "../index";
 import images from "../../assets";
 
 const NavBar = () => {
@@ -45,7 +45,7 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [openModel, setOpenModel] = useState(true);
 
-  const { account, userName, connectWallet, createAccount, error, setError } =
+  const { account, userName, connectWallet, error, setError, router } =
     useContext(ChatAppContext);
 
   useEffect(() => {
@@ -56,8 +56,8 @@ const NavBar = () => {
       setError(null);
     }, 1000);
   }, [error, account, openModel, userName]);
-
-  return (
+  console.log(router.pathname);
+  return router.pathname != "/auth" ? (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>
         <div className={Style.NavBar_box_left}>
@@ -70,8 +70,10 @@ const NavBar = () => {
               <div
                 onClick={() => setActive(i + 1)}
                 key={i + 1}
-                className={`${Style.NavBar_box_right_menu_items} ${active == i + 1 ? Style.active_btn : ""
-                  }`}>
+                className={`${Style.NavBar_box_right_menu_items} ${
+                  active == i + 1 ? Style.active_btn : ""
+                }`}
+              >
                 <Link
                   className={Style.NavBar_box_right_menu_items_link}
                   href={el.link}
@@ -89,8 +91,9 @@ const NavBar = () => {
                 <div
                   onClick={() => setActive(i + 1)}
                   key={i + 1}
-                  className={`${Style.mobile_menu_items} ${active == i + 1 ? Style.active_btn : ""
-                    }`}
+                  className={`${Style.mobile_menu_items} ${
+                    active == i + 1 ? Style.active_btn : ""
+                  }`}
                 >
                   <Link className={Style.mobile_menu_items_link} href={el.link}>
                     {el.menu}
@@ -118,7 +121,10 @@ const NavBar = () => {
                 <span>Connect Wallet</span>
               </button>
             ) : (
-              <button className="button-78 " onClick={() => setOpenModel(true)}>
+              <button
+                className="button-78 "
+                onClick={() => router.push("auth")}
+              >
                 {""}
                 <Image
                   src={userName ? images.accountName : images.create2}
@@ -140,25 +146,9 @@ const NavBar = () => {
           </div>
         </div>
       </div>
-
-      {/* MODEL COMPONENT */}
-      {openModel == true ? (
-        <div className={Style.modelBox}>
-          <Model
-            openBox={setOpenModel}
-            title="WELCOME TO"
-            head="PYXELVERSE"
-            // info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maxime assumenda exercitationem voluptatibus, vero aliquid in tempore aut, impedit dolores voluptate recusandae nulla fuga? Praesentium iusto mollitia sint fugit! Placeat?"
-            // smallInfo="Please enter your name..."
-            image={images.hero}
-            functionName={createAccount}
-            address={account}
-          />
-        </div>
-      ) : null}
       {error == "" ? "" : <Error error={error} />}
     </div>
-  );
+  ) : null;
 };
 
 export default NavBar;
