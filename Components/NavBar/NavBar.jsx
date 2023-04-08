@@ -37,9 +37,10 @@ const NavBar = () => {
       link: "tos",
     },
     {
-      menu:  "FORUM",
-      link:  "forum",
-    },,
+      menu: "FORUM",
+      link: "forum",
+    },
+    ,
   ];
 
   //USESTATE
@@ -47,18 +48,18 @@ const NavBar = () => {
   const [open, setOpen] = useState(false);
   const [openModel, setOpenModel] = useState(true);
 
-  const { account, userName, connectWallet, error, setError, router } =
-    useContext(ChatAppContext);
+  const {
+    account,
+    userName,
+    connectWallet,
+    createAccount,
+    error,
+    setError,
+    router,
+  } = useContext(ChatAppContext);
 
   useEffect(() => {
     if (userName) setOpenModel(true);
-
-  const { account, userName, connectWallet, createAccount, error, setError } =
-    useContext(ChatAppContext);
-
-  useEffect(() => {
-    if (userName) setOpenModel(false);
-    else setOpenModel(true);
     else setOpenModel(true);
 
     setTimeout(() => {
@@ -66,11 +67,6 @@ const NavBar = () => {
     }, 1000);
   }, [error, account, openModel, userName]);
 
-    setTimeout(() => {
-      setError(null);
-    }, 1000);
-  }, [error, account, openModel, userName]);
-  console.log(router.pathname);
   return router.pathname != "/auth" ? (
     <div className={Style.NavBar}>
       <div className={Style.NavBar_box}>

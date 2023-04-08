@@ -9,7 +9,6 @@ import {
 } from "../Utils/apiFeature";
 
 export const ChatAppContext = React.createContext();
-export const ChatAppContext = React.createContext();
 
 export const ChatAppProvider = ({ children }) => {
   //USESTATE
@@ -48,8 +47,6 @@ export const ChatAppProvider = ({ children }) => {
     } catch (error) {
       // setError("Please Install And Connect Your Wallet");
       console.log(error);
-    } finally {
-      setLoading(false);
     } finally {
       setLoading(false);
     }
@@ -127,7 +124,6 @@ export const ChatAppProvider = ({ children }) => {
   };
   return (
     <ChatAppContext.Provider
-    <ChatAppContext.Provider
       value={{
         readMessage,
         createAccount,
@@ -152,7 +148,6 @@ export const ChatAppProvider = ({ children }) => {
       }}
     >
       {children}
-    </ChatAppContext.Provider>
     </ChatAppContext.Provider>
   );
 };
