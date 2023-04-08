@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,300;0,400;1,200;1,300;1,400&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 
   font-family: 'Roboto', sans-serif;
   /* background-color: #292F3F; */
@@ -32,7 +33,8 @@ a {
 
   body {
     color: white;
-    background: black;
+    /* background: black; */
+    background: linear-gradient(to right, #f13de5, #00c8c8);
   }
 }
 
@@ -70,7 +72,7 @@ a {
 }
 
 .tweetBox__tweetButton {
-  background-color: var(--twitter-color) !important;
+   background-color:var(--twitter-color) !important;
   border: none !important;
   color: white !important;
   font-weight: 900 !important;
@@ -158,13 +160,15 @@ a {
   display: flex;
   align-items: center;
   cursor: pointer;
+  
 }
 
 .sidebarOption:hover {
-  background-color: #e8f5fe;
+  background-color: #11abe8;
   border-radius: 30px;
   color: var(--twitter-color);
   transition: color 100ms ease-out;
+  transform: translateX(1rem);
 }
 
 .sidebarOption > .MuiSvgIcon-root {
@@ -301,4 +305,70 @@ a {
 .widgets__widgetContainer > h2 {
   font-size: 18px;
   font-weight: 800;
+}
+
+
+.tos-container{
+  margin: 2rem;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid white;
+  border-radius: 10px;
+  background: rgba( 236, 209, 209, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.tos-header{
+  font-size: 2.5rem;
+}
+.tos-list{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 90vw;
+
+}
+.tos-list li{
+  font-size: 1.2rem;
+}
+
+
+
+.faq-container{
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  padding: 4rem;
+  padding-top: 2rem;
+  border: 3px solid white;
+  background: rgba( 236, 209, 209, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.faq-header{
+  font-size: 3.5rem;
+}
+
+.faq-item p{
+  font-size: 1.2rem;
+}
+
+.widgets__widgetContainer{
+  color: black;
+  position: relative;
+  left: 3rem;
+}
+.widgets__widgetContainer h2{
+  font-size: 1.5rem;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
 }

@@ -5,11 +5,11 @@ import Style from "./Error.module.css";
 
 const Error = ({ error }) => {
   return (
-    <div className={Style.Error}>
-      <div className={Style.Error_box}>
-        <h1>Please Fix This Error & Reload Browser</h1>
-        {error}
-      </div>
+    <div
+      className={Style.Errro_Container}
+      style={{ opacity: `${error ? "1" : "0"}` }}
+    >
+      <div className={Style.Error}>{error}</div>
     </div>
   );
 };

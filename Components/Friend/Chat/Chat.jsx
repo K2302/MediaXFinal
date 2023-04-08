@@ -60,7 +60,7 @@ const Chat = ({
           <div className={Style.Chat_box_left}>
             {friendMsg.map((el, i) => (
               <div>
-                {el.sender == chatData.address ? (
+                {el.sender === chatData.address ? (
                   <div className={Style.Chat_box_left_title}>
                     <Image
                       src={images.accountName}
@@ -68,9 +68,10 @@ const Chat = ({
                       width={50}
                       height={50}
                     />
-                    <span>
+                    <span >
+
                       {chatData.name} {""}
-                      <small>Time: {converTime(el.timestamp)}</small>
+                      {/* {userName} {""} */}
                     </span>
                   </div>
                 ) : (
@@ -83,7 +84,7 @@ const Chat = ({
                     />
                     <span>
                       {userName} {""}
-                      <small>Time: {converTime(el.timestamp)}</small>
+                      {/* <small>Time: {converTime(el.timestamp)}</small> */}
                     </span>
                   </div>
                 )}
@@ -106,7 +107,6 @@ const Chat = ({
                 placeholder="type your message"
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <Image src={images.file} alt="file" width={50} height={50} />
               {loading == true ? (
                 <Loader />
               ) : (

@@ -139,7 +139,6 @@ export const ChatAppProvider = ({ children }) => {
         loading,
         error,
         setError,
-        router,
         currentUserName,
         currentUserAddress,
       }}

@@ -1,13 +1,13 @@
-
-
 .Card_box{
     display: flex;
     align-items: center;
     line-height: 0;
     gap: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid #f1820342;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 12px linear-gradient(to right, #3d5af1, #00c8c8);
     cursor: pointer;
+    /* background: linear-gradient(to right, #3d5af1, #00c8c8); */
 }
 
 .Card_box_right{
@@ -17,6 +17,13 @@
 
 .Card_box_right_middle{
     margin-top: -1.2rem;
+    position: relative;
+    top: 0.5rem;
+}
+
+.Card_box_right_end{
+    position: relative;
+    top: 0.55rem;
 }
 
 .Card_box_left{
