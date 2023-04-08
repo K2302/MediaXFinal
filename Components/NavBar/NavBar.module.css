@@ -150,3 +150,7 @@
     background-color: #292f3f;
   }
 }
+.NavBar_box_right{
+  position: relative;
+  left: 2rem;
+}

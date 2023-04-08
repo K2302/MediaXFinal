@@ -38,6 +38,10 @@ const NavBar = () => {
       menu: "FORUM",
       link: "forum",
     },
+    {
+      menu: "Meta",
+      link: "App",
+    },
     ,
   ];
 
