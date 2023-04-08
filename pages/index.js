@@ -16,7 +16,13 @@ const ChatApp = () => {
       <Filter />
       <Friend />
     </div>
-  ) : null;
+  ) : (
+    <div
+      style={{ display: "flex", justifyContent: "center", minWidth: "100vw" }}
+    >
+      Please Login to view chats
+    </div>
+  );
 };
 
 export default ChatApp;
