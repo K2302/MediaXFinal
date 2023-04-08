@@ -4,7 +4,7 @@ import Image from "next/image";
 //INTERNAL IMPORT
 import Style from "./Friend.module.css";
 import Card from "./Card/Card";
- import Chat from "./Chat/Chat";
+import Chat from "./Chat/Chat";
 import { ChatAppContext } from "../../Context/ChatAppContext";
 
 const Friend = () => {
@@ -22,7 +22,6 @@ const Friend = () => {
     currentUserAddress,
     readUser,
   } = useContext(ChatAppContext);
-  console.log(friendLists);
   return userName ? (
     <div className={Style.Friend}>
       <div className={Style.Friend_box}>
