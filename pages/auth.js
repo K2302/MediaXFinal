@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Style from "../styles/Auth.module.css";
+import Style from "../styles/auth.module.css";
 import { Model } from "../Components";
 import { ChatAppContext } from "../Context/ChatAppContext";
 import images from "../assets";
