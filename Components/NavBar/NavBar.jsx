@@ -40,7 +40,7 @@ const NavBar = () => {
     },
     {
       menu: "Meta",
-      link: "App",
+      link: "meta",
     },
     ,
   ];
