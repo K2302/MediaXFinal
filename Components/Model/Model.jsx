@@ -3,13 +3,12 @@ import Image from "next/image";
 
 //INTERNAL IMPORT
 import Style from "./Model.module.css";
-import images from "../../assets";
 import { ChatAppContext } from "../../Context/ChatAppContext";
 import { Loader } from "../../Components/index";
-import AccountBalanceWalletIcon from "@material-ui/icons/AccountBalanceWallet";
-import PersonIcon from '@material-ui/icons/Person';
-import TelegramIcon from '@material-ui/icons/Telegram';
-import CancelIcon from '@material-ui/icons/HighlightOff';
+import {BsWalletFill} from 'react-icons/bs'
+import {BsFillSendFill} from 'react-icons/bs'
+import {BsPersonFill} from 'react-icons/bs'
+import {BsFillXSquareFill} from 'react-icons/bs'
 
 const Model = ({
   openBox,
@@ -54,7 +53,7 @@ const Model = ({
           ) : (
             <div className={Style.Model_box_right_name}>
               <div className={Style.Model_box_right_name_info}>
-                <PersonIcon />
+                <BsPersonFill />
                 <input
                   type="text"
                   required={true}
@@ -63,7 +62,7 @@ const Model = ({
                 />
               </div>
               <div className={Style.Model_box_right_name_info}>
-                <AccountBalanceWalletIcon style={{ color: "#fff" }} />
+                <BsWalletFill style={{ color: "#fff" }} />
                 <input
                   type="text"
                   placeholder={address || "Address.."}
@@ -75,14 +74,14 @@ const Model = ({
               <div className={Style.Model_box_right_name_btn}>
                 <button onClick={() => handleSubmit({ name, accountAddress })}>
                   {""}
-                  <TelegramIcon />
+                  <BsFillSendFill />
                   {""}
                   Submit
                 </button>
 
                 <button onClick={() => router.push("/")}>
                   {""}
-                  <CancelIcon/>
+                  <BsFillXSquareFill/>
                   {""}
                   Cancel
                 </button>
