@@ -1,10 +1,13 @@
+
 .modelBox{
     position: fixed;
     inset: 0 0 0 0;
-    background-color: #292F3F;
+    background: linear-gradient(to right, #8c04dc, #00c8c8);
     z-index: 77777777;
 }
-
+.modelBox h1{
+    color: white;
+}
 
 @media only screen and (max-width: 35em) {
     
@@ -12,6 +15,7 @@
         position: absolute;
         inset: 0 0 -70% 0%;
         z-index: 11111;
-        background-color: #292F3F;
+        background: linear-gradient(to right, #8c04dc, #00c8c8);
     }
 }
+
