@@ -45,6 +45,18 @@ a {
   padding-right: 10px;
 }
 
+.meta-btn{
+  border: 3px white solid;
+  width: 25rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  padding: 2rem;
+  margin: auto
+}
+
 .tweetBox > form {
   display: flex;
   flex-direction: column;
